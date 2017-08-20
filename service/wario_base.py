@@ -20,7 +20,7 @@ async def on_ready():
     print(bot.user.id)
     print('------')
     
-@bot.event
+@bot.listen()
 async def on_message(message):
     for keyword in RESPONSES:
         if keyword.lower() in message.content.lower():
