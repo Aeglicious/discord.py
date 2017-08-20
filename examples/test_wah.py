@@ -7,7 +7,7 @@ parser = argparse.ArgumentParser(description='Bot around.')
 parser.add_argument('--client_id')
 args = parser.parse_args()
 
-description = ''Wah?'''
+description = '''Wah?'''
 bot = commands.Bot(command_prefix='?', description=description)
 
 @bot.event
