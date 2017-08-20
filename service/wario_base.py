@@ -38,7 +38,7 @@ async def update():
 @bot.command()
 async def add(keyword: str, response: str):
     RESPONSES[keyword] = response
-    with open('data.txt', 'w') as resource_file:
+    with open('wario.txt', 'w') as resource_file:
         json.dump(RESPONSES, resource_file)
     await bot.say('Wah-dded response for ' + keyword)
 
