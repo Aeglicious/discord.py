@@ -16,6 +16,11 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
+    
+@client.event
+async def on_message(message):
+    if 'justice' in message.content:
+        await bot.say('http://www.nintendoworldreport.com/media/18935/4/1.jpg')
 
 @bot.command()
 async def add(left : int, right : int):
