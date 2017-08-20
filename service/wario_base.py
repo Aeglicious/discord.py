@@ -13,14 +13,14 @@ bot = commands.Bot(command_prefix='war?', description=description)
 
 RESPONSES = {}
 
-@bot.listen
+@bot.event
 async def on_ready():
     print('Logged in as')
     print(bot.user.name)
     print(bot.user.id)
     print('------')
     
-@bot.listen
+@bot.event
 async def on_message(message):
     for keyword in RESPONSES:
         if keyword.lower() in message.content.lower():
