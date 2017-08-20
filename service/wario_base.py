@@ -24,9 +24,9 @@ async def on_ready():
 async def on_message(message):
     for keyword in RESPONSES:
         if keyword.lower() in message.content.lower():
-            await bot.say(message.channel, RESPONSES[keyword])
+            await bot.send_message(message.channel, RESPONSES[keyword])
     if 'wario' in message.content.lower():
-        await bot.say(message.channel, 'Wah, wah, WA' + 'H'*int(random.uniform(1,1000)))
+        await bot.send_mssage(message.channel, 'Wah, wah, WA' + 'H'*int(random.uniform(1,1000)))
 
 @bot.command()
 async def update():
