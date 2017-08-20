@@ -19,8 +19,10 @@ async def on_ready():
     
 @bot.event
 async def on_message(message):
-    if 'justice' in message.content:
+    if 'justice' in message.content.lower():
         await bot.say('http://www.nintendoworldreport.com/media/18935/4/1.jpg')
+    if 'wario' in message.content.lower():
+        await bot.say('Wah, wah, wa' + 'h'*int(random.uniform(1,1000)))
 
 @bot.command()
 async def add(left : int, right : int):
