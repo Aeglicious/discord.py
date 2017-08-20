@@ -9,25 +9,24 @@ parser.add_argument('--client_id')
 args = parser.parse_args()
 
 description = '''Wah?'''
-client = discord.Client()
 bot = commands.Bot(command_prefix='war?', description=description)
 
 RESPONSES = {}
 
-@client.event
+@bot.listen
 async def on_ready():
     print('Logged in as')
-    print(client.user.name)
-    print(client.user.id)
+    print(bot.user.name)
+    print(bot.user.id)
     print('------')
     
-@client.event
+@bot.listen
 async def on_message(message):
     for keyword in RESPONSES:
         if keyword.lower() in message.content.lower():
-            await client.send_message(message.channel, RESPONSES[keyword])
+            await bot.say(message.channel, RESPONSES[keyword])
     if 'wario' in message.content.lower():
-        await client.send_message(message.channel, 'Wah, wah, WA' + 'H'*int(random.uniform(1,1000)))
+        await bot.say(message.channel, 'Wah, wah, WA' + 'H'*int(random.uniform(1,1000)))
 
 @bot.command()
 async def update():
@@ -43,5 +42,4 @@ async def add(keyword: str, response: str):
         json.dump(RESPONSES, resource_file)
     await bot.say('Wah-dded response for ' + keyword)
 
-client.run(args.client_id)
 bot.run(args.client_id)
