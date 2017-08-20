@@ -1,1 +1,1 @@
-worker: python examples/test_wah.py --client_id=$CLIENTID
+worker: python service/wario_base.py --client_id=$CLIENTID
