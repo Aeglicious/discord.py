@@ -20,8 +20,8 @@ async def on_ready():
 @client.event
 async def on_message(message):
     if 'justice' in message.content.lower():
-        await client.say(message.channel, 'http://www.nintendoworldreport.com/media/18935/4/1.jpg')
+        await client.send_message(message.channel, 'http://www.nintendoworldreport.com/media/18935/4/1.jpg')
     if 'wario' in message.content.lower():
-        await client.say(message.channel, 'Wah, wah, wa' + 'h'*int(random.uniform(1,1000)))
+        await client.send_message(message.channel, 'Wah, wah, wa' + 'h'*int(random.uniform(1,1000)))
 
 client.run(args.client_id)
