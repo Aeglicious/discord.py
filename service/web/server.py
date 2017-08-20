@@ -25,4 +25,4 @@ def return_backup():
     return send_file('wario.txt')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=443)
