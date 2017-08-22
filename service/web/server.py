@@ -16,9 +16,7 @@ def hello_world():
         file = request.files['file']
         if file.filename == WARIO_RESPONSE_FILE_PATH:
             file.save(file.filename)
-            return redirect(request.url)
-        else:
-            return redirect(request.url)
+        return redirect(request.url)
 
     return render_template('upload_responses.html')
 
