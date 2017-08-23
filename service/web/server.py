@@ -9,7 +9,7 @@ app = Flask(__name__)
 WARIO_RESPONSE_FILE_PATH = 'response_dict.json'
 
 
-@app.route('/')
+@app.route('/', methods=['GET', 'POST'])
 def hello_world():
     if request.method == 'POST':
         # check if the post request has the file part
