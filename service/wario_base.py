@@ -11,7 +11,7 @@ args = parser.parse_args()
 description = '''Wah?'''
 bot = commands.Bot(command_prefix='war?', description=description)
 
-WARIO_RESPONSE_FILE_PATH = 'service/response_dict.json'
+WARIO_RESPONSE_FILE_PATH = 'response_dict.json'
 RESPONSES = {}
 
 
