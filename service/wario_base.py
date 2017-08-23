@@ -29,7 +29,7 @@ async def on_message(message):
         if keyword.lower() in message.content.lower():
             await bot.send_message(message.channel, RESPONSES[keyword])
     if 'wario' in message.content.lower():
-        await bot.send_message(message.channel, 'Wah, wah, WA' + 'H'*int(random.uniform(1,1000)))
+        await bot.send_message(message.channel, 'Wah\nWah\nWA' + 'H'*int(random.uniform(1,1000)))
 
 
 @bot.command()
@@ -46,6 +46,7 @@ async def add(keyword: str, response: str):
     with open(WARIO_RESPONSE_FILE_PATH, 'w') as resource_file:
         resource_file.write(json.dumps(RESPONSES))
         print(WARIO_RESPONSE_FILE_PATH)
+        print(resource_file.name)
     await bot.say('Wah-dded response for \"%s\"' % keyword)
 
 bot.run(args.client_id)
