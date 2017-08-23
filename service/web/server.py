@@ -30,4 +30,4 @@ def return_backup():
     return send_file(WARIO_RESPONSE_FILE_PATH)
 
 if __name__ == '__main__':
-    app.run(port=443)
+    app.run()
