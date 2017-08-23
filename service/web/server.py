@@ -7,6 +7,8 @@ from flask import send_file
 app = Flask(__name__)
 
 WARIO_RESPONSE_FILE_PATH = 'wario.txt'
+
+
 @app.route('/')
 def hello_world():
     if request.method == 'POST':
@@ -20,6 +22,7 @@ def hello_world():
 
     return render_template('upload_responses.html')
 
+
 @app.route('/backup')
 def return_backup():
     if not os.path.isfile(WARIO_RESPONSE_FILE_PATH):
@@ -27,4 +30,4 @@ def return_backup():
     return send_file(WARIO_RESPONSE_FILE_PATH)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=443)
+    app.run(port=443)
