@@ -44,7 +44,7 @@ async def update():
 async def add(keyword: str, response: str):
     RESPONSES[keyword] = response
     with open(WARIO_RESPONSE_FILE_PATH, 'w') as resource_file:
-        json.dump(RESPONSES, resource_file)
+        resource_file.write(json.dumps(RESPONSES))
     await bot.say('Wah-dded response for ' + keyword)
 
 bot.run(args.client_id)
