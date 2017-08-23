@@ -6,7 +6,7 @@ from flask import request
 from flask import send_file
 app = Flask(__name__)
 
-WARIO_RESPONSE_FILE_PATH = 'wario.txt'
+WARIO_RESPONSE_FILE_PATH = 'response_dict.json'
 
 
 @app.route('/')

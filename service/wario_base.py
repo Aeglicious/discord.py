@@ -11,7 +11,9 @@ args = parser.parse_args()
 description = '''Wah?'''
 bot = commands.Bot(command_prefix='war?', description=description)
 
+WARIO_RESPONSE_FILE_PATH = 'response_dict.json'
 RESPONSES = {}
+
 
 @bot.event
 async def on_ready():
@@ -19,7 +21,8 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
-    
+
+
 @bot.listen()
 async def on_message(message):
     for keyword in RESPONSES:
@@ -28,17 +31,19 @@ async def on_message(message):
     if 'wario' in message.content.lower():
         await bot.send_message(message.channel, 'Wah, wah, WA' + 'H'*int(random.uniform(1,1000)))
 
+
 @bot.command()
 async def update():
     global RESPONSES
-    with open('wario.txt') as resource_file:
-      RESPONSES = json.load(resource_file)
+    with open(WARIO_RESPONSE_FILE_PATH) as resource_file:
+        RESPONSES = json.load(resource_file)
     await bot.say('Updated')
+
 
 @bot.command()
 async def add(keyword: str, response: str):
     RESPONSES[keyword] = response
-    with open('wario.txt', 'w') as resource_file:
+    with open(WARIO_RESPONSE_FILE_PATH, 'w') as resource_file:
         json.dump(RESPONSES, resource_file)
     await bot.say('Wah-dded response for ' + keyword)
 
