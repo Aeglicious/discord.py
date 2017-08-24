@@ -13,6 +13,9 @@ bot = commands.Bot(command_prefix='war?', description=description)
 
 RESPONSES = {}
 
+if not discord.opus.is_loaded():
+    discord.opus.load_opus('libopus.so')
+
 
 @bot.event
 async def on_ready():
@@ -23,6 +26,13 @@ async def on_ready():
     for channel in bot.get_all_channels():
         if 'wario' in channel.name.lower():
             voice = await bot.join_voice_channel(channel)
+
+
+@bot.listen()
+async def on_voice_state_update(before, after):
+    for voice in bot.voice_clients:
+        player = voice.create_ffmpeg_player('Wave20.wav')
+        player.start()
 
 
 @bot.listen()
