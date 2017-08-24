@@ -20,6 +20,9 @@ async def on_ready():
     print(bot.user.name)
     print(bot.user.id)
     print('------')
+    for channel in bot.get_all_channels():
+        if 'wario' in channel.name.lower():
+            voice = await bot.join_voice_channel(channel)
 
 
 @bot.listen()
