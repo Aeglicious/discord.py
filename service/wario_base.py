@@ -25,7 +25,7 @@ async def on_ready():
     print('------')
     for channel in bot.get_all_channels():
         if 'wario' in channel.name.lower():
-            voice = await bot.join_voice_channel(channel)
+            await bot.join_voice_channel(channel)
 
 
 @bot.listen()
