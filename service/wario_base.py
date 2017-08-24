@@ -31,7 +31,7 @@ async def on_message(message):
         await bot.send_message(message.channel, 'Wah\nWah\nWA' + 'H'*int(random.uniform(1,1000)))
 
     if 'mario' in message.content.lower():
-            await bot.edit_message(message, message.content.replace('mario', 'red wario').replace('Mario', 'Red Wario'))
+        await bot.edit_message(message, message.content.replace('mario', 'red wario').replace('Mario', 'Red Wario'))
 
 
 @bot.command()
