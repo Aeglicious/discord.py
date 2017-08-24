@@ -5,4 +5,5 @@ chardet
 flask
 gunicorn
 PyNaCl
+discord.py[voice]
 psycopg2
