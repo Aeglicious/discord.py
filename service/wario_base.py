@@ -14,7 +14,7 @@ bot = commands.Bot(command_prefix='war?', description=description)
 RESPONSES = {}
 
 if not discord.opus.is_loaded():
-    discord.opus.load_opus('libopus.so')
+    discord.opus.load_opus('service/libopus.so')
 
 
 @bot.event
@@ -31,7 +31,7 @@ async def on_ready():
 @bot.listen()
 async def on_voice_state_update(before, after):
     for voice in bot.voice_clients:
-        player = voice.create_ffmpeg_player('Wave20.wav')
+        player = voice.create_ffmpeg_player('service/Wave20.wav')
         player.start()
 
 
