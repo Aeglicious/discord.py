@@ -31,9 +31,11 @@ async def on_ready():
 @bot.listen()
 async def on_voice_state_update(before, after):
     for voice in bot.voice_clients:
-        player = voice.create_ffmpeg_player('service/Wave20.wav')
-        player.volume = 2
+        player = await voice.create_ytdl_player('https://www.youtube.com/watch?v=GJIBm-sWkps')
         player.start()
+        # player = voice.create_ffmpeg_player('service/Wave20.wav')
+        # player.volume = 2
+        # player.start()
 
 
 @bot.listen()
