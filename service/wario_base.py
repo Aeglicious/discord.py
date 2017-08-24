@@ -32,6 +32,7 @@ async def on_ready():
 async def on_voice_state_update(before, after):
     for voice in bot.voice_clients:
         player = voice.create_ffmpeg_player('service/Wave20.wav')
+        player.volume = 2
         player.start()
 
 
