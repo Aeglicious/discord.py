@@ -5,5 +5,5 @@ flask
 gunicorn
 PyNaCl
 youtube_dl
-discord.py[voice]==0.14.3
+discord.py[voice]
 psycopg2
