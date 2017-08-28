@@ -4,6 +4,5 @@ chardet
 flask
 gunicorn
 PyNaCl
-youtube_dl
-discord.py[voice]
+discord.py
 psycopg2
