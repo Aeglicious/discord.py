@@ -51,6 +51,11 @@ async def on_message(message):
         if new_message != message.content:
             await bot.send_message(message.channel, new_message)
 
+    if 'naruto' in message.content.lower():
+        new_message = message.content.replace('naruto', 'boruto\'s dad').replace('Naruto', 'Boruto\'s dad')
+        if new_message != message.content:
+            await bot.send_message(message.channel, new_message)
+
 
 @bot.command()
 async def update():
