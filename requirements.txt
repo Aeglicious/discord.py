@@ -4,5 +4,4 @@ discord.py
 chardet
 flask
 gunicorn
-PyNaCl
 psycopg2
